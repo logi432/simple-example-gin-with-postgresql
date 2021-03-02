@@ -10,10 +10,10 @@ import (
 
 func Connect() *pg.DB {
 	opts := &pg.Options{
-		User:     getEnv("QOVERY_DATABASE_MY_DB_USERNAME", "postgres"),
-		Password: getEnv("QOVERY_DATABASE_MY_DB_PASSWORD", "postgres"),
-		Addr:     getEnv("QOVERY_DATABASE_MY_DB_HOST", "localhost") + ":" + getEnv("QOVERY_DATABASE_MY_DB_PORT", "5432"),
-		Database: getEnv("QOVERY_DATABASE_MY_DB_DATABASE", "postgres"),
+		User:     getEnv("QOVERY_DATABASE_MYDB_USERNAME", "postgres"),
+		Password: getEnv("QOVERY_DATABASE_MYDB_PASSWORD", "postgres"),
+		Addr:     getEnv("QOVERY_DATABASE_MYDB_HOST", "localhost") + ":" + getEnv("QOVERY_DATABASE_MY_DB_PORT", "5432"),
+		Database: getEnv("QOVERY_DATABASE_MYDB_DATABASE", "postgres"),
 		OnConnect: func(conn *pg.Conn) error {
 			return CreateJokeTable(conn)
 		},
